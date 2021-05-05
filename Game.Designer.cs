@@ -43,6 +43,11 @@ namespace MovieFInderApp
             this.buttonResetGame = new System.Windows.Forms.Button();
             this.buttonStopGame = new System.Windows.Forms.Button();
             this.panelGameArea = new System.Windows.Forms.Panel();
+            this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonAnswerD = new System.Windows.Forms.Button();
+            this.buttonAnswerC = new System.Windows.Forms.Button();
+            this.buttonAnswerB = new System.Windows.Forms.Button();
+            this.buttonAnswerA = new System.Windows.Forms.Button();
             this.panelPP = new System.Windows.Forms.Panel();
             this.panelProfilePhoto = new System.Windows.Forms.Panel();
             this.labelQuestionNumberNow = new System.Windows.Forms.Label();
@@ -56,11 +61,6 @@ namespace MovieFInderApp
             this.labelQuestion = new System.Windows.Forms.Label();
             this.wmpMoviePlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.timerStartGame = new System.Windows.Forms.Timer(this.components);
-            this.buttonAnswerA = new System.Windows.Forms.Button();
-            this.buttonAnswerB = new System.Windows.Forms.Button();
-            this.buttonAnswerC = new System.Windows.Forms.Button();
-            this.buttonAnswerD = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panelUsername.SuspendLayout();
             this.panelInfo.SuspendLayout();
@@ -209,6 +209,7 @@ namespace MovieFInderApp
             this.buttonResetGame.TabIndex = 5;
             this.buttonResetGame.Text = "Reset Game";
             this.buttonResetGame.UseVisualStyleBackColor = false;
+            this.buttonResetGame.Click += new System.EventHandler(this.buttonResetGame_Click);
             // 
             // buttonStopGame
             // 
@@ -225,6 +226,7 @@ namespace MovieFInderApp
             this.buttonStopGame.TabIndex = 4;
             this.buttonStopGame.Text = "Stop Game";
             this.buttonStopGame.UseVisualStyleBackColor = false;
+            this.buttonStopGame.Click += new System.EventHandler(this.buttonStopGame_Click);
             // 
             // panelGameArea
             // 
@@ -251,6 +253,104 @@ namespace MovieFInderApp
             this.panelGameArea.Name = "panelGameArea";
             this.panelGameArea.Size = new System.Drawing.Size(1140, 688);
             this.panelGameArea.TabIndex = 4;
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNext.ForeColor = System.Drawing.Color.White;
+            this.buttonNext.Location = new System.Drawing.Point(829, 588);
+            this.buttonNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(129, 36);
+            this.buttonNext.TabIndex = 13;
+            this.buttonNext.Text = "Next";
+            this.buttonNext.UseVisualStyleBackColor = false;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonAnswerD
+            // 
+            this.buttonAnswerD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonAnswerD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAnswerD.FlatAppearance.BorderSize = 0;
+            this.buttonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnswerD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnswerD.ForeColor = System.Drawing.Color.White;
+            this.buttonAnswerD.Location = new System.Drawing.Point(283, 484);
+            this.buttonAnswerD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonAnswerD.Name = "buttonAnswerD";
+            this.buttonAnswerD.Size = new System.Drawing.Size(542, 36);
+            this.buttonAnswerD.TabIndex = 12;
+            this.buttonAnswerD.Text = "Answer";
+            this.buttonAnswerD.UseVisualStyleBackColor = false;
+            this.buttonAnswerD.Visible = false;
+            this.buttonAnswerD.Click += new System.EventHandler(this.buttonAnswerD_Click);
+            // 
+            // buttonAnswerC
+            // 
+            this.buttonAnswerC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonAnswerC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAnswerC.FlatAppearance.BorderSize = 0;
+            this.buttonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnswerC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnswerC.ForeColor = System.Drawing.Color.White;
+            this.buttonAnswerC.Location = new System.Drawing.Point(283, 438);
+            this.buttonAnswerC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonAnswerC.Name = "buttonAnswerC";
+            this.buttonAnswerC.Size = new System.Drawing.Size(542, 36);
+            this.buttonAnswerC.TabIndex = 11;
+            this.buttonAnswerC.Text = "Answer";
+            this.buttonAnswerC.UseVisualStyleBackColor = false;
+            this.buttonAnswerC.Visible = false;
+            this.buttonAnswerC.Click += new System.EventHandler(this.buttonAnswerC_Click);
+            // 
+            // buttonAnswerB
+            // 
+            this.buttonAnswerB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonAnswerB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAnswerB.FlatAppearance.BorderSize = 0;
+            this.buttonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnswerB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnswerB.ForeColor = System.Drawing.Color.White;
+            this.buttonAnswerB.Location = new System.Drawing.Point(283, 392);
+            this.buttonAnswerB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonAnswerB.Name = "buttonAnswerB";
+            this.buttonAnswerB.Size = new System.Drawing.Size(542, 36);
+            this.buttonAnswerB.TabIndex = 10;
+            this.buttonAnswerB.Text = "Answer";
+            this.buttonAnswerB.UseVisualStyleBackColor = false;
+            this.buttonAnswerB.Visible = false;
+            this.buttonAnswerB.Click += new System.EventHandler(this.buttonAnswerB_Click);
+            // 
+            // buttonAnswerA
+            // 
+            this.buttonAnswerA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonAnswerA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAnswerA.FlatAppearance.BorderSize = 0;
+            this.buttonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnswerA.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnswerA.ForeColor = System.Drawing.Color.White;
+            this.buttonAnswerA.Location = new System.Drawing.Point(283, 346);
+            this.buttonAnswerA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonAnswerA.Name = "buttonAnswerA";
+            this.buttonAnswerA.Size = new System.Drawing.Size(542, 36);
+            this.buttonAnswerA.TabIndex = 9;
+            this.buttonAnswerA.Text = "Answer";
+            this.buttonAnswerA.UseVisualStyleBackColor = false;
+            this.buttonAnswerA.Visible = false;
+            this.buttonAnswerA.Click += new System.EventHandler(this.buttonAnswerA_Click);
             // 
             // panelPP
             // 
@@ -351,6 +451,7 @@ namespace MovieFInderApp
             this.buttonFiftyFifty.TabIndex = 0;
             this.buttonFiftyFifty.Text = "50/50";
             this.buttonFiftyFifty.UseVisualStyleBackColor = false;
+            this.buttonFiftyFifty.Click += new System.EventHandler(this.buttonFiftyFifty_Click);
             // 
             // buttonPlayAgain
             // 
@@ -410,104 +511,6 @@ namespace MovieFInderApp
             this.timerStartGame.Interval = 2000;
             this.timerStartGame.Tick += new System.EventHandler(this.timerStartGame_Tick);
             // 
-            // buttonAnswerA
-            // 
-            this.buttonAnswerA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
-            this.buttonAnswerA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAnswerA.FlatAppearance.BorderSize = 0;
-            this.buttonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnswerA.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAnswerA.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswerA.Location = new System.Drawing.Point(283, 346);
-            this.buttonAnswerA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonAnswerA.Name = "buttonAnswerA";
-            this.buttonAnswerA.Size = new System.Drawing.Size(542, 36);
-            this.buttonAnswerA.TabIndex = 9;
-            this.buttonAnswerA.Text = "Answer";
-            this.buttonAnswerA.UseVisualStyleBackColor = false;
-            this.buttonAnswerA.Visible = false;
-            this.buttonAnswerA.Click += new System.EventHandler(this.buttonAnswerA_Click);
-            // 
-            // buttonAnswerB
-            // 
-            this.buttonAnswerB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
-            this.buttonAnswerB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAnswerB.FlatAppearance.BorderSize = 0;
-            this.buttonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnswerB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAnswerB.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswerB.Location = new System.Drawing.Point(283, 392);
-            this.buttonAnswerB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonAnswerB.Name = "buttonAnswerB";
-            this.buttonAnswerB.Size = new System.Drawing.Size(542, 36);
-            this.buttonAnswerB.TabIndex = 10;
-            this.buttonAnswerB.Text = "Answer";
-            this.buttonAnswerB.UseVisualStyleBackColor = false;
-            this.buttonAnswerB.Visible = false;
-            this.buttonAnswerB.Click += new System.EventHandler(this.buttonAnswerB_Click);
-            // 
-            // buttonAnswerC
-            // 
-            this.buttonAnswerC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
-            this.buttonAnswerC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAnswerC.FlatAppearance.BorderSize = 0;
-            this.buttonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnswerC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAnswerC.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswerC.Location = new System.Drawing.Point(283, 438);
-            this.buttonAnswerC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonAnswerC.Name = "buttonAnswerC";
-            this.buttonAnswerC.Size = new System.Drawing.Size(542, 36);
-            this.buttonAnswerC.TabIndex = 11;
-            this.buttonAnswerC.Text = "Answer";
-            this.buttonAnswerC.UseVisualStyleBackColor = false;
-            this.buttonAnswerC.Visible = false;
-            this.buttonAnswerC.Click += new System.EventHandler(this.buttonAnswerC_Click);
-            // 
-            // buttonAnswerD
-            // 
-            this.buttonAnswerD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
-            this.buttonAnswerD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAnswerD.FlatAppearance.BorderSize = 0;
-            this.buttonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnswerD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAnswerD.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswerD.Location = new System.Drawing.Point(283, 484);
-            this.buttonAnswerD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonAnswerD.Name = "buttonAnswerD";
-            this.buttonAnswerD.Size = new System.Drawing.Size(542, 36);
-            this.buttonAnswerD.TabIndex = 12;
-            this.buttonAnswerD.Text = "Answer";
-            this.buttonAnswerD.UseVisualStyleBackColor = false;
-            this.buttonAnswerD.Visible = false;
-            this.buttonAnswerD.Click += new System.EventHandler(this.buttonAnswerD_Click);
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
-            this.buttonNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonNext.FlatAppearance.BorderSize = 0;
-            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNext.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNext.ForeColor = System.Drawing.Color.White;
-            this.buttonNext.Location = new System.Drawing.Point(829, 588);
-            this.buttonNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(129, 36);
-            this.buttonNext.TabIndex = 13;
-            this.buttonNext.Text = "Next";
-            this.buttonNext.UseVisualStyleBackColor = false;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -519,6 +522,7 @@ namespace MovieFInderApp
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Game";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Answer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Game_FormClosed);
             this.Load += new System.EventHandler(this.Game_Load);

@@ -16,6 +16,7 @@ namespace MovieFInderApp
     {
         public int liveScore = 0;
         string trueAnswer;
+        public bool isJokerUsed = false;
         public bool isAnswered = false;
         public bool isAnswerTrue = false;
         public string movieVideoPathForReplay;
@@ -42,6 +43,7 @@ namespace MovieFInderApp
 
         private void Game_Load(object sender, EventArgs e)
         {
+            disableJoker();
             generatedMoviesCount = 0;
             unvisibleNextButton();
             unvisibleButtons();
@@ -50,16 +52,19 @@ namespace MovieFInderApp
             labelUsername.Text = "Username: " + username;
             try
             {
-                StreamReader readData = new StreamReader(@"Data\" + username + @"\data.dll");
-                readData.ReadLine();
-                readData.ReadLine();
-                readData.ReadLine();
-                string pathPhoto = readData.ReadLine();
-                readData.Close();
-                if (File.Exists(pathPhoto))
+                if (!username.Contains("Guest"))
                 {
-                    Image profilPhoto = new Bitmap(pathPhoto);
-                    panelProfilePhoto.BackgroundImage = profilPhoto;
+                    StreamReader readData = new StreamReader(@"Data\" + username + @"\data.dll");
+                    readData.ReadLine();
+                    readData.ReadLine();
+                    readData.ReadLine();
+                    string pathPhoto = readData.ReadLine();
+                    readData.Close();
+                    if (File.Exists(pathPhoto))
+                    {
+                        Image profilPhoto = new Bitmap(pathPhoto);
+                        panelProfilePhoto.BackgroundImage = profilPhoto;
+                    }
                 }
             }
             catch (Exception)
@@ -94,32 +99,20 @@ namespace MovieFInderApp
 
         private void buttonAddPhoto_Click(object sender, EventArgs e)
         {
-            OpenFileDialog choosePP = new OpenFileDialog();
-            choosePP.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-            DialogResult choosePPResult = choosePP.ShowDialog();
-            if (choosePPResult == DialogResult.OK)
+            if (!username.Contains("Guest"))
             {
-                try
+                OpenFileDialog choosePP = new OpenFileDialog();
+                choosePP.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+                DialogResult choosePPResult = choosePP.ShowDialog();
+                if (choosePPResult == DialogResult.OK)
                 {
-                    string ppFileLocation = choosePP.FileName;
-                    Image fileLocation = new Bitmap(ppFileLocation);
-                    string savePPPath = @"Data\" + username + @"\" + "pp." + GetImageFormat(fileLocation).ToString().ToLower();
-                    if (!File.Exists(savePPPath))
+                    try
                     {
-                        fileLocation.Save(savePPPath);
-                        using (StreamWriter writePPPathtoFile = new StreamWriter(@"Data\" + username + @"\data.dll", append: true))
+                        string ppFileLocation = choosePP.FileName;
+                        Image fileLocation = new Bitmap(ppFileLocation);
+                        string savePPPath = @"Data\" + username + @"\" + "pp." + GetImageFormat(fileLocation).ToString().ToLower();
+                        if (!File.Exists(savePPPath))
                         {
-                            writePPPathtoFile.WriteLine(savePPPath);
-                        };
-
-                        panelProfilePhoto.BackgroundImage = fileLocation;
-                        panelProfilePhoto.BackgroundImageLayout = ImageLayout.Stretch;
-                    }
-                    else
-                    {
-                        MessageBox.Show("You already have a profile photo and can`t change it!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        /*
-                            File.Delete(savePPPath);
                             fileLocation.Save(savePPPath);
                             using (StreamWriter writePPPathtoFile = new StreamWriter(@"Data\" + username + @"\data.dll", append: true))
                             {
@@ -128,16 +121,31 @@ namespace MovieFInderApp
 
                             panelProfilePhoto.BackgroundImage = fileLocation;
                             panelProfilePhoto.BackgroundImageLayout = ImageLayout.Stretch;
-                        */
+                        }
+                        else
+                        {
+                            MessageBox.Show("You already have a profile photo and can`t change it!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            /*
+                                File.Delete(savePPPath);
+                                fileLocation.Save(savePPPath);
+                                using (StreamWriter writePPPathtoFile = new StreamWriter(@"Data\" + username + @"\data.dll", append: true))
+                                {
+                                    writePPPathtoFile.WriteLine(savePPPath);
+                                };
+
+                                panelProfilePhoto.BackgroundImage = fileLocation;
+                                panelProfilePhoto.BackgroundImageLayout = ImageLayout.Stretch;
+                            */
+                        }
+
                     }
-
+                    catch (Exception)
+                    {
+                        MessageBox.Show("An error occured. Please, use another image.", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("An error occured. Please, use another image.", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
             }
+            else MessageBox.Show("You can't add profile photo while playing as a guest!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void buttonStartGame_Click(object sender, EventArgs e)
@@ -146,6 +154,13 @@ namespace MovieFInderApp
             timerStartGame.Start();
             generatedMoviesCount = 0;
             liveScore = 0;
+            tempList.Clear();
+            isJokerUsed = false;
+            enableJoker();
+            wmpMoviePlayer.Ctlcontrols.stop();
+            disableButtons();
+            unvisibleButtons();
+            unvisibleNextButton();
         }
 
         private int generateIndex()
@@ -153,14 +168,13 @@ namespace MovieFInderApp
             Random randomIndexGenerator = new Random();
             int index;
             int indexTest = randomIndexGenerator.Next(0, 10);
-            generatedMoviesCount++;
+
             if (!tempList.Contains(indexTest))
             {
                 index = indexTest;
                 tempList.Add(index);
                 //MessageBox.Show(String.Join(", ", tempList));
                 //MessageBox.Show(index.ToString());
-
                 return index;
             }
             try
@@ -171,17 +185,19 @@ namespace MovieFInderApp
             {
                 return 0;
             }
-            
+
         }
 
         private void StartGame()
         {
+            isJokerUsed = false;
             wmpMoviePlayer.Ctlcontrols.stop();
             int indexMovie = 0;
             if (generatedMoviesCount < 5)
             {
                 indexMovie = generateIndex();
             }
+            generatedMoviesCount++;
             string movieVideoFilePath = @"Movies\" + moviesList[indexMovie] + @"\movie.mp4";
             string movieAnswersFilePath = @"Movies\" + moviesList[indexMovie] + @"\answers.txt";
             wmpMoviePlayer.URL = movieVideoFilePath;
@@ -201,6 +217,10 @@ namespace MovieFInderApp
             setTrueAnswer(answer);
             enableButtons();
             visibleButtons();
+            if (isJokerUsed)
+            {
+                disableJoker();
+            }
         }
 
         private void timerStartGame_Tick(object sender, EventArgs e)
@@ -214,6 +234,17 @@ namespace MovieFInderApp
             wmpMoviePlayer.Ctlcontrols.stop();
             wmpMoviePlayer.URL = movieVideoPathForReplay;
             wmpMoviePlayer.Ctlcontrols.play();
+        }
+
+
+        private void disableJoker()
+        {
+            buttonFiftyFifty.Enabled = false;
+        }
+
+        private void enableJoker()
+        {
+            buttonFiftyFifty.Enabled = true;
         }
 
         private void unvisibleNextButton()
@@ -289,8 +320,13 @@ namespace MovieFInderApp
         {
             if (buttonAnswerA.Text == trueAnswer)
             {
-                MessageBox.Show("True");
-                liveScore += 20;
+                if (isJokerUsed)
+                {
+                    MessageBox.Show("True");
+                    liveScore += 10;
+                }
+                else liveScore += 20;
+                MessageBox.Show(liveScore.ToString());
             }
             else
             {
@@ -305,8 +341,13 @@ namespace MovieFInderApp
         {
             if (buttonAnswerB.Text == trueAnswer)
             {
-                MessageBox.Show("True");
-                liveScore += 20;
+                if (isJokerUsed)
+                {
+                    MessageBox.Show("True");
+                    liveScore += 10;
+                }
+                else liveScore += 20;
+                MessageBox.Show(liveScore.ToString());
             }
             else
             {
@@ -321,8 +362,13 @@ namespace MovieFInderApp
         {
             if (buttonAnswerC.Text == trueAnswer)
             {
-                MessageBox.Show("True");
-                liveScore += 20;
+                if (isJokerUsed)
+                {
+                    MessageBox.Show("True");
+                    liveScore += 10;
+                }
+                else liveScore += 20;
+                MessageBox.Show(liveScore.ToString());
             }
             else
             {
@@ -337,9 +383,15 @@ namespace MovieFInderApp
         {
             if (buttonAnswerD.Text == trueAnswer)
             {
-                MessageBox.Show("True");
-                liveScore += 20;
-            } else
+                if (isJokerUsed)
+                {
+                    MessageBox.Show("True");
+                    liveScore += 10;
+                }
+                else liveScore += 20;
+                MessageBox.Show(liveScore.ToString());
+            }
+            else
             {
                 MessageBox.Show("False");
             }
@@ -349,6 +401,9 @@ namespace MovieFInderApp
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            labelScore.Text = liveScore.ToString();
+            if (generatedMoviesCount < 5)
+                labelQuestionNumberNow.Text = (generatedMoviesCount + 1).ToString() + "/5";
             if (generatedMoviesCount < 5)
                 StartGame();
             else
@@ -360,6 +415,65 @@ namespace MovieFInderApp
                 unvisibleButtons();
                 unvisibleNextButton();
             }
+        }
+
+        public Button checkTrueButton()
+        {
+            if (buttonAnswerA.Text == trueAnswer)
+                return buttonAnswerA;
+            else if (buttonAnswerB.Text == trueAnswer)
+                return buttonAnswerB;
+            else if (buttonAnswerC.Text == trueAnswer)
+                return buttonAnswerC;
+            else
+                return buttonAnswerD;
+        }
+
+        private void buttonFiftyFifty_Click(object sender, EventArgs e)
+        {
+            isJokerUsed = true;
+            Button trueButton = checkTrueButton();
+            //MessageBox.Show("True button is: " + trueButton.Text);
+            Button secondButton = trueButton;
+            Button[] buttons = { buttonAnswerA, buttonAnswerB, buttonAnswerC, buttonAnswerD };
+            for (int i = 0; i < buttons.Count(); i++)
+            {
+                if (buttons[i] != trueButton)
+                {
+                    secondButton = buttons[i];
+                    //MessageBox.Show("Second button is: " + secondButton.Text);
+                    break;
+                }
+            }
+            for (int i = 0; i < buttons.Count(); i++)
+            {
+                if (buttons[i] != trueButton)
+                    if (buttons[i] != secondButton)
+                        buttons[i].Visible = false;
+            }
+            disableJoker();
+        }
+
+        private void buttonStopGame_Click(object sender, EventArgs e)
+        {
+            wmpMoviePlayer.Ctlcontrols.stop();
+            unvisibleButtons();
+            disableButtons();
+            unvisibleNextButton();
+            disableJoker();
+        }
+
+        private void buttonResetGame_Click(object sender, EventArgs e)
+        {
+            generatedMoviesCount = 0;
+            liveScore = 0;
+            tempList.Clear();
+            isJokerUsed = false;
+            enableJoker();
+            wmpMoviePlayer.Ctlcontrols.stop();
+            disableButtons();
+            unvisibleButtons();
+            unvisibleNextButton();
         }
     }
 }
