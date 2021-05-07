@@ -46,6 +46,7 @@ namespace MovieFInderApp
                     srForPassword.Close();
                     if (passwordSaved == password && mailSaved == mail)
                     {
+                        buttonGoBack.Visible = false;
                         timerLoading.Start();
                         cpbLoading.Show();
                         cpbLoading.Value = 0;
@@ -99,6 +100,13 @@ namespace MovieFInderApp
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonGoBack_Click(object sender, EventArgs e)
+        {
+            Main mainPage = new Main();
+            this.Hide();
+            mainPage.Show();
         }
     }
 }

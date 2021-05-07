@@ -37,6 +37,7 @@ namespace MovieFInderApp
             this.labelUsername = new System.Windows.Forms.Label();
             this.buttonRanking = new System.Windows.Forms.Button();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.buttonLogOut = new System.Windows.Forms.Button();
             this.panelUsername = new System.Windows.Forms.Panel();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.labelInfo = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@ namespace MovieFInderApp
             this.buttonAnswerB = new System.Windows.Forms.Button();
             this.buttonAnswerA = new System.Windows.Forms.Button();
             this.panelPP = new System.Windows.Forms.Panel();
+            this.buttonRemovePhoto = new System.Windows.Forms.Button();
             this.panelProfilePhoto = new System.Windows.Forms.Panel();
             this.labelQuestionNumberNow = new System.Windows.Forms.Label();
             this.labelScore = new System.Windows.Forms.Label();
@@ -97,10 +99,10 @@ namespace MovieFInderApp
             this.buttonAddPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddPhoto.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddPhoto.ForeColor = System.Drawing.Color.White;
-            this.buttonAddPhoto.Location = new System.Drawing.Point(20, 36);
+            this.buttonAddPhoto.Location = new System.Drawing.Point(4, 21);
             this.buttonAddPhoto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAddPhoto.Name = "buttonAddPhoto";
-            this.buttonAddPhoto.Size = new System.Drawing.Size(107, 35);
+            this.buttonAddPhoto.Size = new System.Drawing.Size(130, 35);
             this.buttonAddPhoto.TabIndex = 2;
             this.buttonAddPhoto.Text = "Add Photo";
             this.buttonAddPhoto.UseVisualStyleBackColor = false;
@@ -145,6 +147,7 @@ namespace MovieFInderApp
             this.buttonRanking.TabIndex = 2;
             this.buttonRanking.Text = "Ranking";
             this.buttonRanking.UseVisualStyleBackColor = false;
+            this.buttonRanking.Click += new System.EventHandler(this.buttonRanking_Click);
             // 
             // panelLeft
             // 
@@ -152,6 +155,7 @@ namespace MovieFInderApp
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelLeft.BackColor = System.Drawing.Color.White;
             this.panelLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelLeft.Controls.Add(this.buttonLogOut);
             this.panelLeft.Controls.Add(this.panelUsername);
             this.panelLeft.Controls.Add(this.panelInfo);
             this.panelLeft.Controls.Add(this.buttonResetGame);
@@ -162,6 +166,24 @@ namespace MovieFInderApp
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(233, 688);
             this.panelLeft.TabIndex = 3;
+            // 
+            // buttonLogOut
+            // 
+            this.buttonLogOut.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogOut.FlatAppearance.BorderSize = 0;
+            this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogOut.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogOut.ForeColor = System.Drawing.Color.White;
+            this.buttonLogOut.Location = new System.Drawing.Point(53, 565);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonLogOut.Name = "buttonLogOut";
+            this.buttonLogOut.Size = new System.Drawing.Size(129, 36);
+            this.buttonLogOut.TabIndex = 3;
+            this.buttonLogOut.Text = "Log out";
+            this.buttonLogOut.UseVisualStyleBackColor = false;
+            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
             // panelUsername
             // 
@@ -191,7 +213,7 @@ namespace MovieFInderApp
             this.labelInfo.Location = new System.Drawing.Point(7, 24);
             this.labelInfo.Name = "labelInfo";
             this.labelInfo.Size = new System.Drawing.Size(220, 27);
-            this.labelInfo.TabIndex = 4;
+            this.labelInfo.TabIndex = 0;
             this.labelInfo.Text = "Press F1 for information";
             // 
             // buttonResetGame
@@ -282,10 +304,10 @@ namespace MovieFInderApp
             this.buttonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnswerD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswerD.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswerD.Location = new System.Drawing.Point(283, 484);
+            this.buttonAnswerD.Location = new System.Drawing.Point(283, 517);
             this.buttonAnswerD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAnswerD.Name = "buttonAnswerD";
-            this.buttonAnswerD.Size = new System.Drawing.Size(542, 36);
+            this.buttonAnswerD.Size = new System.Drawing.Size(542, 46);
             this.buttonAnswerD.TabIndex = 12;
             this.buttonAnswerD.Text = "Answer";
             this.buttonAnswerD.UseVisualStyleBackColor = false;
@@ -302,10 +324,10 @@ namespace MovieFInderApp
             this.buttonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnswerC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswerC.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswerC.Location = new System.Drawing.Point(283, 438);
+            this.buttonAnswerC.Location = new System.Drawing.Point(283, 462);
             this.buttonAnswerC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAnswerC.Name = "buttonAnswerC";
-            this.buttonAnswerC.Size = new System.Drawing.Size(542, 36);
+            this.buttonAnswerC.Size = new System.Drawing.Size(542, 46);
             this.buttonAnswerC.TabIndex = 11;
             this.buttonAnswerC.Text = "Answer";
             this.buttonAnswerC.UseVisualStyleBackColor = false;
@@ -322,10 +344,10 @@ namespace MovieFInderApp
             this.buttonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnswerB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswerB.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswerB.Location = new System.Drawing.Point(283, 392);
+            this.buttonAnswerB.Location = new System.Drawing.Point(283, 406);
             this.buttonAnswerB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAnswerB.Name = "buttonAnswerB";
-            this.buttonAnswerB.Size = new System.Drawing.Size(542, 36);
+            this.buttonAnswerB.Size = new System.Drawing.Size(542, 46);
             this.buttonAnswerB.TabIndex = 10;
             this.buttonAnswerB.Text = "Answer";
             this.buttonAnswerB.UseVisualStyleBackColor = false;
@@ -342,10 +364,10 @@ namespace MovieFInderApp
             this.buttonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnswerA.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswerA.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswerA.Location = new System.Drawing.Point(283, 346);
+            this.buttonAnswerA.Location = new System.Drawing.Point(283, 350);
             this.buttonAnswerA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAnswerA.Name = "buttonAnswerA";
-            this.buttonAnswerA.Size = new System.Drawing.Size(542, 36);
+            this.buttonAnswerA.Size = new System.Drawing.Size(542, 46);
             this.buttonAnswerA.TabIndex = 9;
             this.buttonAnswerA.Text = "Answer";
             this.buttonAnswerA.UseVisualStyleBackColor = false;
@@ -356,6 +378,7 @@ namespace MovieFInderApp
             // 
             this.panelPP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelPP.BackColor = System.Drawing.Color.Transparent;
+            this.panelPP.Controls.Add(this.buttonRemovePhoto);
             this.panelPP.Controls.Add(this.panelProfilePhoto);
             this.panelPP.Controls.Add(this.buttonAddPhoto);
             this.panelPP.Location = new System.Drawing.Point(914, 0);
@@ -363,12 +386,30 @@ namespace MovieFInderApp
             this.panelPP.Size = new System.Drawing.Size(224, 99);
             this.panelPP.TabIndex = 5;
             // 
+            // buttonRemovePhoto
+            // 
+            this.buttonRemovePhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRemovePhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonRemovePhoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRemovePhoto.FlatAppearance.BorderSize = 0;
+            this.buttonRemovePhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRemovePhoto.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRemovePhoto.ForeColor = System.Drawing.Color.White;
+            this.buttonRemovePhoto.Location = new System.Drawing.Point(4, 58);
+            this.buttonRemovePhoto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonRemovePhoto.Name = "buttonRemovePhoto";
+            this.buttonRemovePhoto.Size = new System.Drawing.Size(130, 35);
+            this.buttonRemovePhoto.TabIndex = 14;
+            this.buttonRemovePhoto.Text = "Remove Photo";
+            this.buttonRemovePhoto.UseVisualStyleBackColor = false;
+            this.buttonRemovePhoto.Click += new System.EventHandler(this.buttonRemovePhoto_Click);
+            // 
             // panelProfilePhoto
             // 
             this.panelProfilePhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelProfilePhoto.BackColor = System.Drawing.Color.Silver;
             this.panelProfilePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelProfilePhoto.Location = new System.Drawing.Point(134, 23);
+            this.panelProfilePhoto.Location = new System.Drawing.Point(145, 24);
             this.panelProfilePhoto.Name = "panelProfilePhoto";
             this.panelProfilePhoto.Size = new System.Drawing.Size(71, 59);
             this.panelProfilePhoto.TabIndex = 3;
@@ -508,7 +549,7 @@ namespace MovieFInderApp
             // 
             // timerStartGame
             // 
-            this.timerStartGame.Interval = 2000;
+            this.timerStartGame.Interval = 3000;
             this.timerStartGame.Tick += new System.EventHandler(this.timerStartGame_Tick);
             // 
             // Game
@@ -520,12 +561,14 @@ namespace MovieFInderApp
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelGameArea);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Answer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Game_FormClosed);
             this.Load += new System.EventHandler(this.Game_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
             this.panelLeft.ResumeLayout(false);
             this.panelUsername.ResumeLayout(false);
             this.panelUsername.PerformLayout();
@@ -574,5 +617,7 @@ namespace MovieFInderApp
         private System.Windows.Forms.Button buttonAnswerB;
         private System.Windows.Forms.Button buttonAnswerA;
         private System.Windows.Forms.Button buttonNext;
+        private System.Windows.Forms.Button buttonLogOut;
+        private System.Windows.Forms.Button buttonRemovePhoto;
     }
 }

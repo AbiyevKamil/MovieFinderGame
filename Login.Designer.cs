@@ -53,6 +53,7 @@ namespace MovieFInderApp
             this.panelLoading = new System.Windows.Forms.Panel();
             this.cpbLoading = new CircularProgressBar.CircularProgressBar();
             this.timerLoading = new System.Windows.Forms.Timer(this.components);
+            this.buttonGoBack = new System.Windows.Forms.Button();
             this.panelRightContainer.SuspendLayout();
             this.panelForm.SuspendLayout();
             this.panelPassword.SuspendLayout();
@@ -312,6 +313,7 @@ namespace MovieFInderApp
             this.panelLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelLoading.Controls.Add(this.buttonGoBack);
             this.panelLoading.Controls.Add(this.cpbLoading);
             this.panelLoading.Location = new System.Drawing.Point(0, 0);
             this.panelLoading.Name = "panelLoading";
@@ -356,6 +358,24 @@ namespace MovieFInderApp
             // 
             this.timerLoading.Interval = 50;
             this.timerLoading.Tick += new System.EventHandler(this.timerLoading_Tick);
+            // 
+            // buttonGoBack
+            // 
+            this.buttonGoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGoBack.FlatAppearance.BorderSize = 0;
+            this.buttonGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGoBack.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGoBack.ForeColor = System.Drawing.Color.White;
+            this.buttonGoBack.Location = new System.Drawing.Point(534, 36);
+            this.buttonGoBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonGoBack.Name = "buttonGoBack";
+            this.buttonGoBack.Size = new System.Drawing.Size(129, 36);
+            this.buttonGoBack.TabIndex = 21;
+            this.buttonGoBack.Text = "Go back";
+            this.buttonGoBack.UseVisualStyleBackColor = false;
+            this.buttonGoBack.Click += new System.EventHandler(this.buttonGoBack_Click);
             // 
             // Login
             // 
@@ -408,5 +428,6 @@ namespace MovieFInderApp
         private CircularProgressBar.CircularProgressBar cpbLoading;
         private System.Windows.Forms.Timer timerLoading;
         private System.Windows.Forms.Panel panelLoading;
+        private System.Windows.Forms.Button buttonGoBack;
     }
 }

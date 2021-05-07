@@ -110,5 +110,11 @@ namespace MovieFInderApp
             Application.Exit();
         }
 
+        private void buttonGoBack_Click(object sender, EventArgs e)
+        {
+            Main mainPage = new Main();
+            this.Hide();
+            mainPage.Show();
+        }
     }
 }

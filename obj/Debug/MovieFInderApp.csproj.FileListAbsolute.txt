@@ -21,3 +21,6 @@ C:\Users\LEGION\source\repos\MovieFInderApp\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\LEGION\source\repos\MovieFInderApp\obj\Debug\Interop.WMPLib.dll
 C:\Users\LEGION\source\repos\MovieFInderApp\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\LEGION\source\repos\MovieFInderApp\obj\Debug\MovieFInderApp.csproj.ResolveComReference.cache
+C:\Users\LEGION\source\repos\MovieFInderApp\obj\Debug\MovieFInderApp.Ranking.resources
+C:\Users\LEGION\source\repos\MovieFInderApp\obj\Debug\MovieFInderApp.CongratsForm.resources
+C:\Users\LEGION\source\repos\MovieFInderApp\obj\Debug\MovieFInderApp.InformationBox.resources

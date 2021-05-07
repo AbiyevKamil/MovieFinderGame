@@ -55,6 +55,7 @@ namespace MovieFInderApp
             this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.timerLoading = new System.Windows.Forms.Timer(this.components);
             this.labelHeader = new System.Windows.Forms.Label();
+            this.buttonGoBack = new System.Windows.Forms.Button();
             this.panelUsername.SuspendLayout();
             this.panelMail.SuspendLayout();
             this.panelPassword.SuspendLayout();
@@ -358,12 +359,31 @@ namespace MovieFInderApp
             this.labelHeader.TabIndex = 14;
             this.labelHeader.Text = "Registration";
             // 
+            // buttonGoBack
+            // 
+            this.buttonGoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGoBack.FlatAppearance.BorderSize = 0;
+            this.buttonGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGoBack.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGoBack.ForeColor = System.Drawing.Color.White;
+            this.buttonGoBack.Location = new System.Drawing.Point(1161, 41);
+            this.buttonGoBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonGoBack.Name = "buttonGoBack";
+            this.buttonGoBack.Size = new System.Drawing.Size(129, 36);
+            this.buttonGoBack.TabIndex = 15;
+            this.buttonGoBack.Text = "Go back";
+            this.buttonGoBack.UseVisualStyleBackColor = false;
+            this.buttonGoBack.Click += new System.EventHandler(this.buttonGoBack_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1295, 562);
+            this.Controls.Add(this.buttonGoBack);
             this.Controls.Add(this.labelHeader);
             this.Controls.Add(this.panelLeftImg);
             this.Controls.Add(this.panelForm);
@@ -417,5 +437,6 @@ namespace MovieFInderApp
         private System.Windows.Forms.Panel panelContainerPasswordAgain;
         private System.Windows.Forms.Timer timerLoading;
         private System.Windows.Forms.Label labelHeader;
+        private System.Windows.Forms.Button buttonGoBack;
     }
 }

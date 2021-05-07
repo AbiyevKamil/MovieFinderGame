@@ -48,9 +48,8 @@ namespace MovieFInderApp
 
         private void buttonRanking_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Ranking rankingPage = new Ranking();
-            rankingPage.Show();
+            rankingPage.ShowDialog();
         }
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
