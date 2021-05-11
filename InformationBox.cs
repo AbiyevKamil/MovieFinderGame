@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MovieFInderApp
+namespace MovieFinderGame
 {
     public partial class InformationBox : Form
     {

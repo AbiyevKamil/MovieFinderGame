@@ -1,5 +1,5 @@
 ﻿
-namespace MovieFInderApp
+namespace MovieFinderGame
 {
     partial class LoadingScreen
     {
@@ -98,6 +98,7 @@ namespace MovieFInderApp
             this.Controls.Add(this.labelHeader);
             this.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

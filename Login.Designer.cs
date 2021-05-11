@@ -1,5 +1,5 @@
 ﻿
-namespace MovieFInderApp
+namespace MovieFinderGame
 {
     partial class Login
     {
@@ -385,6 +385,7 @@ namespace MovieFInderApp
             this.ClientSize = new System.Drawing.Size(1378, 562);
             this.Controls.Add(this.panelRightContainer);
             this.Controls.Add(this.panelLeftImg);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1187, 500);
             this.Name = "Login";
             this.Text = "Login";

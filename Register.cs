@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace MovieFInderApp
+namespace MovieFinderGame
 {
     public partial class Register : Form
     {
@@ -40,54 +40,57 @@ namespace MovieFInderApp
             string mail = textBoxMail.Text.Trim();
             string password = textBoxPassword.Text.Trim();
             string passwordAgain = textBoxPasswordAgain.Text.Trim();
-            if (regexMail.IsMatch(mail))
+            if (username != "" && mail != "" && password != "" && passwordAgain != "")
             {
-                if (password == passwordAgain)
+                if (regexMail.IsMatch(mail))
                 {
                     if (username.Contains(" ") || username.Contains("#") || username.Contains("<") || username.Contains("$") || username.Contains("+") || username.Contains("%") || username.Contains(">") || username.Contains("`") || username.Contains("!") || username.Contains("&") || username.Contains("*") || username.Contains("'") || username.Contains("|") || username.Contains("{") || username.Contains("}") || username.Contains("?") || username.Contains("\"") || username.Contains("=") || username.Contains("/") || username.Contains(":") || username.Contains("@"))
                     {
-                        MessageBox.Show("Username can`t contain any of the following characters:\n! \" ' / ! ? < > # $ + % ! *", "Sign Up", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Username can`t contain any of the following characters:\n! \" ' / ! ? < > # $ + % ! *", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    else if (username != "" && mail != "" && password != "" && passwordAgain != "")
+                    else
                     {
-                        string path = @"Data\" + username;
-                        string dataFilePath = path + @"\data.dll";
-
-                        if (!Directory.Exists(path))
+                        if (password == passwordAgain)
                         {
-                            Directory.CreateDirectory(path);
-                            FileStream dataFile = File.Create(dataFilePath);
-                            StreamWriter swDataFile = new StreamWriter(dataFile);
-                            swDataFile.WriteLine(username);
-                            swDataFile.WriteLine(mail);
-                            swDataFile.WriteLine(password);
+                            string path = @"Data\" + username;
+                            string dataFilePath = path + @"\data.dll";
 
-                            Login loginPage = new Login();
-                            loginPage.Show();
-                            this.Hide();
+                            if (!Directory.Exists(path))
+                            {
+                                Directory.CreateDirectory(path);
+                                FileStream dataFile = File.Create(dataFilePath);
+                                StreamWriter swDataFile = new StreamWriter(dataFile);
+                                swDataFile.WriteLine(username);
+                                swDataFile.WriteLine(mail);
+                                swDataFile.WriteLine(password);
 
-                            // Terminate files
-                            swDataFile.Close();
-                            dataFile.Close();
+                                Login loginPage = new Login();
+                                loginPage.Show();
+                                this.Hide();
+
+                                // Terminate files
+                                swDataFile.Close();
+                                dataFile.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Username already exists!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Username already exists!", "Sign up", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Passwords doesn`t match!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                    }
-                    else if (username == "" || mail == "" || password == "" || passwordAgain == "")
-                    {
-                        MessageBox.Show("Fill the form!", "Sign Up", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Passwords doesn`t match!", "Sign Up", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("E-mail is not valid!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
+            else if (username == "" || mail == "" || password == "" || passwordAgain == "")
             {
-                MessageBox.Show("E-mail is not valid!", "Sign Up", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Fill the form!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

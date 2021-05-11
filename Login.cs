@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace MovieFInderApp
+namespace MovieFinderGame
 {
     public partial class Login : Form
     {
@@ -35,7 +35,7 @@ namespace MovieFInderApp
             string password = textBoxPassword.Text.Trim();
             string path = @"Data\" + username;
             string dataFilePath = path + @"\data.dll";
-            if (username != "" && password != "")
+            if (username != "" && password != "" && mail != "")
             {
                 if (Directory.Exists(path))
                 {
@@ -53,7 +53,7 @@ namespace MovieFInderApp
                     }
                     else
                     {
-                        MessageBox.Show("Wrong Password", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Wrong information!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
@@ -61,12 +61,17 @@ namespace MovieFInderApp
                     MessageBox.Show("Wrong information!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            else
+            {
+                MessageBox.Show("Fill the form!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxShowPassword.Checked)
             {
+                // \0 refers to a null character
                 textBoxPassword.PasswordChar = '\0';
             }
             else

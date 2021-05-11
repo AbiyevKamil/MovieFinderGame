@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Collections;
 
-namespace MovieFInderApp
+namespace MovieFinderGame
 {
     public partial class Ranking : Form
     {

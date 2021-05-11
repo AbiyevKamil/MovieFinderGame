@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using static System.Random;
 using System.IO;
 
-namespace MovieFInderApp
+namespace MovieFinderGame
 {
     public partial class Game : Form
     {
@@ -50,7 +50,6 @@ namespace MovieFInderApp
             unvisibleNextButton();
             unvisibleButtons();
             wmpMoviePlayer.Ctlenabled = false;
-            //panelProfilePhoto.BackgroundImageLayout = ImageLayout.Stretch;
             labelUsername.Text = "Username: " + username;
             if (!username.Contains("Guest"))
             {
@@ -59,7 +58,6 @@ namespace MovieFInderApp
                 {
                     StreamReader scoreReader = new StreamReader(scorePath);
                     int lastScore = int.Parse(scoreReader.ReadLine());
-                    MessageBox.Show(lastScore.ToString());
                     labelHighScore.Text = "Your high score: " + lastScore;
                     scoreReader.Close();
                 }
@@ -90,20 +88,17 @@ namespace MovieFInderApp
                 MessageBox.Show("Game will start after 3 seconds.", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 timerStartGame.Start();
                 isGameStarted = true;
-            } 
+            }
             else
             {
                 MessageBox.Show("Game is already started.", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         private int generateIndex()
         {
             int index;
             int indexTest = randomIndexGenerator.Next(0, 10);
-            MessageBox.Show(indexTest.ToString());
             if (!tempList.Contains(indexTest))
             {
                 index = indexTest;
@@ -112,7 +107,6 @@ namespace MovieFInderApp
             }
             try
             {
-                MessageBox.Show("GenerateIndex again used");
                 return generateIndex();
             }
             catch (Exception)
@@ -344,7 +338,7 @@ namespace MovieFInderApp
             }
             else
             {
-                MessageBox.Show("False","Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("False", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             disableJoker();
             disableButtons();
@@ -506,95 +500,3 @@ namespace MovieFInderApp
 
     }
 }
-
-
-/* string PPPath; 
-
-
-        public System.Drawing.Imaging.ImageFormat GetImageFormat(System.Drawing.Image img)
-        {
-            if (img.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Jpeg))
-                return System.Drawing.Imaging.ImageFormat.Jpeg;
-            if (img.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Bmp))
-                return System.Drawing.Imaging.ImageFormat.Bmp;
-            if (img.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png))
-                return System.Drawing.Imaging.ImageFormat.Png;
-            if (img.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Emf))
-                return System.Drawing.Imaging.ImageFormat.Emf;
-            if (img.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Exif))
-                return System.Drawing.Imaging.ImageFormat.Exif;
-            if (img.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Gif))
-                return System.Drawing.Imaging.ImageFormat.Gif;
-            if (img.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Icon))
-                return System.Drawing.Imaging.ImageFormat.Icon;
-            if (img.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.MemoryBmp))
-                return System.Drawing.Imaging.ImageFormat.MemoryBmp;
-            if (img.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Tiff))
-                return System.Drawing.Imaging.ImageFormat.Tiff;
-            else
-                return System.Drawing.Imaging.ImageFormat.Wmf;
-        }
-        private void buttonAddPhoto_Click(object sender, EventArgs e)
-        {
-            if (!username.Contains("Guest"))
-            {
-                OpenFileDialog choosePP = new OpenFileDialog();
-                choosePP.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-                DialogResult choosePPResult = choosePP.ShowDialog();
-                if (choosePPResult == DialogResult.OK)
-                {
-                    try
-                    {
-                        string ppFileLocation = choosePP.FileName;
-                        Image fileLocation = new Bitmap(ppFileLocation);
-                        string savePPPath = @"Data\" + username + @"\" + "pp." + GetImageFormat(fileLocation).ToString().ToLower();
-                        if (!File.Exists(savePPPath))
-                        {
-                            PPPath = savePPPath;
-                            fileLocation.Save(savePPPath);
-                            using (StreamWriter writePPPathtoFile = new StreamWriter(@"Data\" + username + @"\data.dll", append: true))
-                            {
-                                writePPPathtoFile.WriteLine(savePPPath);
-                            };
-
-
-                            panelProfilePhoto.BackgroundImage = fileLocation;
-                            panelProfilePhoto.BackgroundImageLayout = ImageLayout.Stretch;
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("You already have a profile photo and can`t change it!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("An error occured. Please, use another image.", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            else MessageBox.Show("You can't add or remove profile photo while playing as a guest!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-        private void buttonRemovePhoto_Click(object sender, EventArgs e)
-        {
-            if (!username.Contains("Guest"))
-            {
-                StreamReader readData = new StreamReader(@"Data\" + username + @"\data.dll");
-                readData.ReadLine();
-                readData.ReadLine();
-                readData.ReadLine();
-                string pathPhoto = readData.ReadLine();
-                readData.Close();
-                try
-                {
-
-                    panelProfilePhoto.BackgroundImage = null;
-                    File.Delete(pathPhoto);
-                } catch (Exception)
-                {
-                    MessageBox.Show("You don`t have a photo!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else MessageBox.Show("You can't add or remove profile photo while playing as a guest!", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }*/

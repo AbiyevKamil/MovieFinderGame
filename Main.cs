@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Random;
 
-namespace MovieFInderApp
+namespace MovieFinderGame
 {
     public partial class Main : Form
     {

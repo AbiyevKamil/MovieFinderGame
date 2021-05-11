@@ -1,5 +1,5 @@
 ﻿
-namespace MovieFInderApp
+namespace MovieFinderGame
 {
     partial class InformationBox
     {

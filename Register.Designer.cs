@@ -1,5 +1,5 @@
 ﻿
-namespace MovieFInderApp
+namespace MovieFinderGame
 {
     partial class Register
     {
@@ -388,6 +388,7 @@ namespace MovieFInderApp
             this.Controls.Add(this.panelLeftImg);
             this.Controls.Add(this.panelForm);
             this.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MinimumSize = new System.Drawing.Size(1200, 500);
             this.Name = "Register";
