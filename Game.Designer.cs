@@ -32,7 +32,6 @@ namespace MovieFInderApp
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.buttonStartGame = new System.Windows.Forms.Button();
-            this.buttonAddPhoto = new System.Windows.Forms.Button();
             this.labelHighScore = new System.Windows.Forms.Label();
             this.labelUsername = new System.Windows.Forms.Label();
             this.buttonRanking = new System.Windows.Forms.Button();
@@ -49,9 +48,6 @@ namespace MovieFInderApp
             this.buttonAnswerC = new System.Windows.Forms.Button();
             this.buttonAnswerB = new System.Windows.Forms.Button();
             this.buttonAnswerA = new System.Windows.Forms.Button();
-            this.panelPP = new System.Windows.Forms.Panel();
-            this.buttonRemovePhoto = new System.Windows.Forms.Button();
-            this.panelProfilePhoto = new System.Windows.Forms.Panel();
             this.labelQuestionNumberNow = new System.Windows.Forms.Label();
             this.labelScore = new System.Windows.Forms.Label();
             this.labelYourScore = new System.Windows.Forms.Label();
@@ -67,7 +63,6 @@ namespace MovieFInderApp
             this.panelUsername.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelGameArea.SuspendLayout();
-            this.panelPP.SuspendLayout();
             this.groupBoxHelp.SuspendLayout();
             this.panelHideControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wmpMoviePlayer)).BeginInit();
@@ -89,24 +84,6 @@ namespace MovieFInderApp
             this.buttonStartGame.Text = "Start Game";
             this.buttonStartGame.UseVisualStyleBackColor = false;
             this.buttonStartGame.Click += new System.EventHandler(this.buttonStartGame_Click);
-            // 
-            // buttonAddPhoto
-            // 
-            this.buttonAddPhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
-            this.buttonAddPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddPhoto.FlatAppearance.BorderSize = 0;
-            this.buttonAddPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddPhoto.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddPhoto.ForeColor = System.Drawing.Color.White;
-            this.buttonAddPhoto.Location = new System.Drawing.Point(4, 21);
-            this.buttonAddPhoto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonAddPhoto.Name = "buttonAddPhoto";
-            this.buttonAddPhoto.Size = new System.Drawing.Size(130, 35);
-            this.buttonAddPhoto.TabIndex = 2;
-            this.buttonAddPhoto.Text = "Add Photo";
-            this.buttonAddPhoto.UseVisualStyleBackColor = false;
-            this.buttonAddPhoto.Click += new System.EventHandler(this.buttonAddPhoto_Click);
             // 
             // labelHighScore
             // 
@@ -263,7 +240,6 @@ namespace MovieFInderApp
             this.panelGameArea.Controls.Add(this.buttonAnswerC);
             this.panelGameArea.Controls.Add(this.buttonAnswerB);
             this.panelGameArea.Controls.Add(this.buttonAnswerA);
-            this.panelGameArea.Controls.Add(this.panelPP);
             this.panelGameArea.Controls.Add(this.labelQuestionNumberNow);
             this.panelGameArea.Controls.Add(this.labelScore);
             this.panelGameArea.Controls.Add(this.labelYourScore);
@@ -374,46 +350,6 @@ namespace MovieFInderApp
             this.buttonAnswerA.Visible = false;
             this.buttonAnswerA.Click += new System.EventHandler(this.buttonAnswerA_Click);
             // 
-            // panelPP
-            // 
-            this.panelPP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelPP.BackColor = System.Drawing.Color.Transparent;
-            this.panelPP.Controls.Add(this.buttonRemovePhoto);
-            this.panelPP.Controls.Add(this.panelProfilePhoto);
-            this.panelPP.Controls.Add(this.buttonAddPhoto);
-            this.panelPP.Location = new System.Drawing.Point(914, 0);
-            this.panelPP.Name = "panelPP";
-            this.panelPP.Size = new System.Drawing.Size(224, 99);
-            this.panelPP.TabIndex = 5;
-            // 
-            // buttonRemovePhoto
-            // 
-            this.buttonRemovePhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRemovePhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
-            this.buttonRemovePhoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRemovePhoto.FlatAppearance.BorderSize = 0;
-            this.buttonRemovePhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRemovePhoto.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemovePhoto.ForeColor = System.Drawing.Color.White;
-            this.buttonRemovePhoto.Location = new System.Drawing.Point(4, 58);
-            this.buttonRemovePhoto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonRemovePhoto.Name = "buttonRemovePhoto";
-            this.buttonRemovePhoto.Size = new System.Drawing.Size(130, 35);
-            this.buttonRemovePhoto.TabIndex = 14;
-            this.buttonRemovePhoto.Text = "Remove Photo";
-            this.buttonRemovePhoto.UseVisualStyleBackColor = false;
-            this.buttonRemovePhoto.Click += new System.EventHandler(this.buttonRemovePhoto_Click);
-            // 
-            // panelProfilePhoto
-            // 
-            this.panelProfilePhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelProfilePhoto.BackColor = System.Drawing.Color.Silver;
-            this.panelProfilePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelProfilePhoto.Location = new System.Drawing.Point(145, 24);
-            this.panelProfilePhoto.Name = "panelProfilePhoto";
-            this.panelProfilePhoto.Size = new System.Drawing.Size(71, 59);
-            this.panelProfilePhoto.TabIndex = 3;
-            // 
             // labelQuestionNumberNow
             // 
             this.labelQuestionNumberNow.AutoSize = true;
@@ -469,7 +405,7 @@ namespace MovieFInderApp
             this.groupBoxHelp.Controls.Add(this.buttonFiftyFifty);
             this.groupBoxHelp.Controls.Add(this.buttonPlayAgain);
             this.groupBoxHelp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBoxHelp.Location = new System.Drawing.Point(913, 102);
+            this.groupBoxHelp.Location = new System.Drawing.Point(919, 3);
             this.groupBoxHelp.Name = "groupBoxHelp";
             this.groupBoxHelp.Size = new System.Drawing.Size(221, 171);
             this.groupBoxHelp.TabIndex = 4;
@@ -576,7 +512,6 @@ namespace MovieFInderApp
             this.panelInfo.PerformLayout();
             this.panelGameArea.ResumeLayout(false);
             this.panelGameArea.PerformLayout();
-            this.panelPP.ResumeLayout(false);
             this.groupBoxHelp.ResumeLayout(false);
             this.panelHideControls.ResumeLayout(false);
             this.panelHideControls.PerformLayout();
@@ -590,7 +525,6 @@ namespace MovieFInderApp
         private System.Windows.Forms.Button buttonStartGame;
         private System.Windows.Forms.Label labelHighScore;
         private System.Windows.Forms.Label labelUsername;
-        private System.Windows.Forms.Button buttonAddPhoto;
         private System.Windows.Forms.Button buttonRanking;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelInfo;
@@ -609,8 +543,6 @@ namespace MovieFInderApp
         private System.Windows.Forms.Label labelQuestionNumber;
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Panel panelUsername;
-        private System.Windows.Forms.Panel panelPP;
-        private System.Windows.Forms.Panel panelProfilePhoto;
         private System.Windows.Forms.Timer timerStartGame;
         private System.Windows.Forms.Button buttonAnswerD;
         private System.Windows.Forms.Button buttonAnswerC;
@@ -618,6 +550,5 @@ namespace MovieFInderApp
         private System.Windows.Forms.Button buttonAnswerA;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonLogOut;
-        private System.Windows.Forms.Button buttonRemovePhoto;
     }
 }

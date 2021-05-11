@@ -373,7 +373,7 @@ namespace MovieFInderApp
             this.buttonGoBack.Name = "buttonGoBack";
             this.buttonGoBack.Size = new System.Drawing.Size(129, 36);
             this.buttonGoBack.TabIndex = 15;
-            this.buttonGoBack.Text = "Go back";
+            this.buttonGoBack.Text = "Go home";
             this.buttonGoBack.UseVisualStyleBackColor = false;
             this.buttonGoBack.Click += new System.EventHandler(this.buttonGoBack_Click);
             // 

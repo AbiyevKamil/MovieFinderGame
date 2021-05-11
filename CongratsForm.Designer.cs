@@ -41,7 +41,7 @@ namespace MovieFInderApp
             this.labelYourScore.AutoSize = true;
             this.labelYourScore.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelYourScore.ForeColor = System.Drawing.Color.DimGray;
-            this.labelYourScore.Location = new System.Drawing.Point(28, 250);
+            this.labelYourScore.Location = new System.Drawing.Point(12, 250);
             this.labelYourScore.Name = "labelYourScore";
             this.labelYourScore.Size = new System.Drawing.Size(121, 25);
             this.labelYourScore.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace MovieFInderApp
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOK.ForeColor = System.Drawing.Color.DimGray;
-            this.buttonOK.Location = new System.Drawing.Point(488, 237);
+            this.buttonOK.Location = new System.Drawing.Point(508, 237);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(67, 50);
             this.buttonOK.TabIndex = 0;
@@ -74,7 +74,7 @@ namespace MovieFInderApp
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(-2, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 229);
+            this.panel1.Size = new System.Drawing.Size(586, 229);
             this.panel1.TabIndex = 3;
             // 
             // CongratsForm
@@ -82,14 +82,14 @@ namespace MovieFInderApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(562, 295);
+            this.ClientSize = new System.Drawing.Size(582, 295);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.labelYourScore);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(580, 342);
+            this.MaximumSize = new System.Drawing.Size(600, 342);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(580, 342);
+            this.MinimumSize = new System.Drawing.Size(600, 342);
             this.Name = "CongratsForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
