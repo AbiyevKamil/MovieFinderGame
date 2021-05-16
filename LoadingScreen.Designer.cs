@@ -45,7 +45,7 @@ namespace MovieFinderGame
             this.labelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelHeader.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeader.ForeColor = System.Drawing.Color.Crimson;
-            this.labelHeader.Location = new System.Drawing.Point(318, 18);
+            this.labelHeader.Location = new System.Drawing.Point(365, 18);
             this.labelHeader.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelHeader.Name = "labelHeader";
             this.labelHeader.Size = new System.Drawing.Size(390, 54);

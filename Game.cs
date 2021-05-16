@@ -85,7 +85,6 @@ namespace MovieFinderGame
                 disableButtons();
                 unvisibleButtons();
                 unvisibleNextButton();
-                MessageBox.Show("Game will start after 3 seconds.", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 timerStartGame.Start();
                 isGameStarted = true;
             }
@@ -119,6 +118,7 @@ namespace MovieFinderGame
 
         private void StartGame()
         {
+            makeButtonsReady();
             isGameStarted = true;
             buttonPlayAgain.Enabled = true;
             isJokerUsed = false;
@@ -262,11 +262,61 @@ namespace MovieFinderGame
             tempList.Clear();
         }
 
+
+        private void MakeButtonAGreen()
+        {
+            buttonAnswerA.BackColor = Color.Green;
+        }
+
+        private void MakeButtonBGreen()
+        {
+            buttonAnswerB.BackColor = Color.Green;
+        }
+
+        private void MakeButtonCGreen()
+        {
+            buttonAnswerC.BackColor = Color.Green;
+        }
+
+        private void MakeButtonDGreen()
+        {
+            buttonAnswerD.BackColor = Color.Green;
+        }
+
+        private void MakeButtonARed()
+        {
+            buttonAnswerA.BackColor = Color.Red;
+        }
+
+        private void MakeButtonBRed()
+        {
+            buttonAnswerB.BackColor = Color.Red;
+        }
+
+        private void MakeButtonCRed()
+        {
+            buttonAnswerC.BackColor = Color.Red;
+        }
+
+        private void MakeButtonDRed()
+        {
+            buttonAnswerD.BackColor = Color.Red;
+        }
+
+        private void makeButtonsReady()
+        {
+            buttonAnswerA.BackColor = Color.DarkSlateGray;
+            buttonAnswerB.BackColor = Color.DarkSlateGray;
+            buttonAnswerC.BackColor = Color.DarkSlateGray;
+            buttonAnswerD.BackColor = Color.DarkSlateGray;
+
+        }
+
         private void buttonAnswerA_Click(object sender, EventArgs e)
         {
             if (buttonAnswerA.Text == trueAnswer)
             {
-                MessageBox.Show("True", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MakeButtonAGreen();
                 if (isJokerUsed)
                 {
                     liveScore += 10;
@@ -275,7 +325,7 @@ namespace MovieFinderGame
             }
             else
             {
-                MessageBox.Show("False", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MakeButtonARed();
             }
             disableJoker();
             disableButtons();
@@ -287,7 +337,7 @@ namespace MovieFinderGame
         {
             if (buttonAnswerB.Text == trueAnswer)
             {
-                MessageBox.Show("True", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MakeButtonBGreen();
                 if (isJokerUsed)
                 {
                     liveScore += 10;
@@ -296,7 +346,7 @@ namespace MovieFinderGame
             }
             else
             {
-                MessageBox.Show("False", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MakeButtonBRed();
             }
             disableJoker();
             disableButtons();
@@ -308,7 +358,7 @@ namespace MovieFinderGame
         {
             if (buttonAnswerC.Text == trueAnswer)
             {
-                MessageBox.Show("True", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MakeButtonCGreen();
                 if (isJokerUsed)
                 {
                     liveScore += 10;
@@ -317,7 +367,7 @@ namespace MovieFinderGame
             }
             else
             {
-                MessageBox.Show("False", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MakeButtonCRed();
             }
             disableJoker();
             disableButtons();
@@ -325,11 +375,12 @@ namespace MovieFinderGame
 
         }
 
+
         private void buttonAnswerD_Click(object sender, EventArgs e)
         {
             if (buttonAnswerD.Text == trueAnswer)
             {
-                MessageBox.Show("True", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MakeButtonDGreen();
                 if (isJokerUsed)
                 {
                     liveScore += 10;
@@ -338,7 +389,7 @@ namespace MovieFinderGame
             }
             else
             {
-                MessageBox.Show("False", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MakeButtonDRed();
             }
             disableJoker();
             disableButtons();
@@ -347,6 +398,7 @@ namespace MovieFinderGame
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            makeButtonsReady();
             if (!isJokerUsed)
             {
                 enableJoker();
@@ -454,7 +506,7 @@ namespace MovieFinderGame
         {
             if (isGameStarted)
             {
-                MessageBox.Show("Game will start after 3 seconds.", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                makeButtonsReady();
                 timerStartGame.Start();
                 generatedMoviesCount = 0;
                 liveScore = 0;

@@ -70,7 +70,7 @@ namespace MovieFinderGame
             // 
             // buttonStartGame
             // 
-            this.buttonStartGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonStartGame.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonStartGame.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonStartGame.FlatAppearance.BorderSize = 0;
             this.buttonStartGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -90,7 +90,7 @@ namespace MovieFinderGame
             this.labelHighScore.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelHighScore.AutoSize = true;
             this.labelHighScore.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.labelHighScore.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelHighScore.Location = new System.Drawing.Point(19, 60);
             this.labelHighScore.Name = "labelHighScore";
             this.labelHighScore.Size = new System.Drawing.Size(163, 27);
@@ -102,7 +102,7 @@ namespace MovieFinderGame
             this.labelUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.labelUsername.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelUsername.Location = new System.Drawing.Point(19, 23);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(103, 27);
@@ -111,7 +111,7 @@ namespace MovieFinderGame
             // 
             // buttonRanking
             // 
-            this.buttonRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonRanking.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonRanking.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRanking.FlatAppearance.BorderSize = 0;
             this.buttonRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -147,7 +147,7 @@ namespace MovieFinderGame
             // buttonLogOut
             // 
             this.buttonLogOut.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonLogOut.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogOut.FlatAppearance.BorderSize = 0;
             this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -186,7 +186,7 @@ namespace MovieFinderGame
             this.labelInfo.AutoSize = true;
             this.labelInfo.BackColor = System.Drawing.Color.Transparent;
             this.labelInfo.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.labelInfo.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelInfo.Location = new System.Drawing.Point(7, 24);
             this.labelInfo.Name = "labelInfo";
             this.labelInfo.Size = new System.Drawing.Size(220, 27);
@@ -195,7 +195,7 @@ namespace MovieFinderGame
             // 
             // buttonResetGame
             // 
-            this.buttonResetGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonResetGame.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonResetGame.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonResetGame.FlatAppearance.BorderSize = 0;
             this.buttonResetGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -212,7 +212,7 @@ namespace MovieFinderGame
             // 
             // buttonStopGame
             // 
-            this.buttonStopGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonStopGame.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonStopGame.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonStopGame.FlatAppearance.BorderSize = 0;
             this.buttonStopGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -255,7 +255,7 @@ namespace MovieFinderGame
             // buttonNext
             // 
             this.buttonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonNext.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonNext.FlatAppearance.BorderSize = 0;
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -274,7 +274,7 @@ namespace MovieFinderGame
             // 
             this.buttonAnswerD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonAnswerD.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonAnswerD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAnswerD.FlatAppearance.BorderSize = 0;
             this.buttonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -294,7 +294,7 @@ namespace MovieFinderGame
             // 
             this.buttonAnswerC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonAnswerC.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonAnswerC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAnswerC.FlatAppearance.BorderSize = 0;
             this.buttonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -314,7 +314,7 @@ namespace MovieFinderGame
             // 
             this.buttonAnswerB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonAnswerB.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonAnswerB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAnswerB.FlatAppearance.BorderSize = 0;
             this.buttonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -334,7 +334,7 @@ namespace MovieFinderGame
             // 
             this.buttonAnswerA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonAnswerA.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonAnswerA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAnswerA.FlatAppearance.BorderSize = 0;
             this.buttonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -355,7 +355,7 @@ namespace MovieFinderGame
             this.labelQuestionNumberNow.AutoSize = true;
             this.labelQuestionNumberNow.BackColor = System.Drawing.Color.Transparent;
             this.labelQuestionNumberNow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuestionNumberNow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.labelQuestionNumberNow.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelQuestionNumberNow.Location = new System.Drawing.Point(107, 20);
             this.labelQuestionNumberNow.Name = "labelQuestionNumberNow";
             this.labelQuestionNumberNow.Size = new System.Drawing.Size(45, 28);
@@ -367,7 +367,7 @@ namespace MovieFinderGame
             this.labelScore.AutoSize = true;
             this.labelScore.BackColor = System.Drawing.Color.Transparent;
             this.labelScore.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.labelScore.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelScore.Location = new System.Drawing.Point(132, 73);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(24, 28);
@@ -379,7 +379,7 @@ namespace MovieFinderGame
             this.labelYourScore.AutoSize = true;
             this.labelYourScore.BackColor = System.Drawing.Color.Transparent;
             this.labelYourScore.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelYourScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.labelYourScore.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelYourScore.Location = new System.Drawing.Point(15, 73);
             this.labelYourScore.Name = "labelYourScore";
             this.labelYourScore.Size = new System.Drawing.Size(121, 28);
@@ -391,7 +391,7 @@ namespace MovieFinderGame
             this.labelQuestionNumber.AutoSize = true;
             this.labelQuestionNumber.BackColor = System.Drawing.Color.Transparent;
             this.labelQuestionNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuestionNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.labelQuestionNumber.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelQuestionNumber.Location = new System.Drawing.Point(15, 20);
             this.labelQuestionNumber.Name = "labelQuestionNumber";
             this.labelQuestionNumber.Size = new System.Drawing.Size(108, 28);
@@ -415,7 +415,7 @@ namespace MovieFinderGame
             // buttonFiftyFifty
             // 
             this.buttonFiftyFifty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFiftyFifty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonFiftyFifty.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonFiftyFifty.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFiftyFifty.FlatAppearance.BorderSize = 0;
             this.buttonFiftyFifty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -433,7 +433,7 @@ namespace MovieFinderGame
             // buttonPlayAgain
             // 
             this.buttonPlayAgain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPlayAgain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(12)))), ((int)(((byte)(14)))));
+            this.buttonPlayAgain.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonPlayAgain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPlayAgain.FlatAppearance.BorderSize = 0;
             this.buttonPlayAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -485,7 +485,7 @@ namespace MovieFinderGame
             // 
             // timerStartGame
             // 
-            this.timerStartGame.Interval = 3000;
+            this.timerStartGame.Interval = 2000;
             this.timerStartGame.Tick += new System.EventHandler(this.timerStartGame_Tick);
             // 
             // Game
@@ -500,6 +500,7 @@ namespace MovieFinderGame
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(1388, 733);
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Answer";

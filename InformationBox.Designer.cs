@@ -43,7 +43,7 @@ namespace MovieFinderGame
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(122, 25);
             this.labelVersion.TabIndex = 0;
-            this.labelVersion.Text = "Version: 2.0.0";
+            this.labelVersion.Text = "Version: 3.0.0";
             // 
             // labelMadeBy
             // 
