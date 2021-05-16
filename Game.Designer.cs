@@ -247,9 +247,9 @@ namespace MovieFinderGame
             this.panelGameArea.Controls.Add(this.groupBoxHelp);
             this.panelGameArea.Controls.Add(this.panelHideControls);
             this.panelGameArea.Controls.Add(this.wmpMoviePlayer);
-            this.panelGameArea.Location = new System.Drawing.Point(230, -1);
+            this.panelGameArea.Location = new System.Drawing.Point(230, -6);
             this.panelGameArea.Name = "panelGameArea";
-            this.panelGameArea.Size = new System.Drawing.Size(1140, 688);
+            this.panelGameArea.Size = new System.Drawing.Size(1140, 693);
             this.panelGameArea.TabIndex = 4;
             // 
             // buttonNext

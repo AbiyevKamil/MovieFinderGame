@@ -24,13 +24,15 @@ namespace MovieFinderGame
         public string movieVideoPathForReplay;
         public int generatedMoviesCount;
         public string username;
-        public static string[] movies = {
+        List<int> tempList = new List<int>();
+        List<string> moviesList = new List<string>()
+        {
             "AvengersEndGame", "Deadshot", "HIMYM", "Interstellar", "Lost",
             "Sherlock", "TenetMeetScene", "TenetReversedBullet", "TheAvengers",
             "TheTrumanShow"
         };
-        List<int> tempList = new List<int>();
-        List<string> moviesList = new List<string>(movies);
+
+        List<int> lastScores = new List<int>();
 
         public Game(string username)
         {
@@ -113,11 +115,11 @@ namespace MovieFinderGame
                 MessageBox.Show("Error happened. Stop game and start again.", "Movie Finder Game", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
-
         }
 
         private void StartGame()
         {
+            buttonNext.Visible = true;
             makeButtonsReady();
             isGameStarted = true;
             buttonPlayAgain.Enabled = true;
@@ -440,13 +442,51 @@ namespace MovieFinderGame
                         StreamWriter scoreSaver = new StreamWriter(scorePath);
                         scoreSaver.WriteLine(liveScore);
                         scoreSaver.Close();
-                        labelHighScore.Text = "Your high score: " + liveScore;
-
+                        lastScores.Add(liveScore);
+                        int max = -100;
+                        if (lastScores.Count() > 0)
+                        {
+                            foreach (int score in lastScores)
+                            {
+                                if (score > max)
+                                {
+                                    max = score;
+                                }
+                            }
+                            if (max < liveScore)
+                            {
+                                labelHighScore.Text = "Your high score: " + liveScore;
+                            }
+                            else
+                            {
+                                labelHighScore.Text = "Your high score: " + max;
+                            }
+                        }
                     }
                 }
                 else
                 {
-                    labelHighScore.Text = "Your high score: " + liveScore;
+                    lastScores.Add(liveScore);
+                    int max = -100;
+                    if (lastScores.Count() > 0)
+                    {
+                        foreach (int score in lastScores)
+                        {
+                            if (score > max)
+                            {
+                                max = score;
+                            }
+                        }
+                        if (max < liveScore)
+                        {
+                            labelHighScore.Text = "Your high score: " + liveScore;
+                        }
+                        else
+                        {
+                            labelHighScore.Text = "Your high score: " + max;
+                        }
+                    }
+
                 }
 
                 CongratsForm congratsForm = new CongratsForm(username, liveScore);
@@ -532,6 +572,7 @@ namespace MovieFinderGame
             this.Hide();
             Main mainPage = new Main();
             mainPage.Show();
+            lastScores.Clear();
         }
 
         private void buttonRanking_Click(object sender, EventArgs e)
