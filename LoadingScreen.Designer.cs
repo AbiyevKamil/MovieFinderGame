@@ -101,7 +101,9 @@ namespace MovieFinderGame
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1047, 533);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1047, 533);
             this.Name = "LoadingScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movie FInder Game";

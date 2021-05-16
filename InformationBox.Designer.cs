@@ -92,7 +92,9 @@ namespace MovieFinderGame
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(339, 258);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(339, 258);
             this.Name = "InformationBox";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

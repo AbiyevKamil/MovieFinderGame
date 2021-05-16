@@ -503,7 +503,7 @@ namespace MovieFinderGame
             this.MinimumSize = new System.Drawing.Size(1388, 733);
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Answer";
+            this.Text = "Movie Finder Game";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Game_FormClosed);
             this.Load += new System.EventHandler(this.Game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
