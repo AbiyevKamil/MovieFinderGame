@@ -123,7 +123,6 @@ namespace MovieFinderGame
             makeButtonsReady();
             isGameStarted = true;
             buttonPlayAgain.Enabled = true;
-            isJokerUsed = false;
             wmpMoviePlayer.Ctlcontrols.stop();
             int indexMovie = 0;
             if (generatedMoviesCount < 5)
@@ -329,6 +328,7 @@ namespace MovieFinderGame
             {
                 MakeButtonARed();
             }
+            labelScore.Text = liveScore.ToString();
             disableJoker();
             disableButtons();
             visibleNextButton();
@@ -350,6 +350,7 @@ namespace MovieFinderGame
             {
                 MakeButtonBRed();
             }
+            labelScore.Text = liveScore.ToString();
             disableJoker();
             disableButtons();
             visibleNextButton();
@@ -371,6 +372,7 @@ namespace MovieFinderGame
             {
                 MakeButtonCRed();
             }
+            labelScore.Text = liveScore.ToString();
             disableJoker();
             disableButtons();
             visibleNextButton();
@@ -393,6 +395,7 @@ namespace MovieFinderGame
             {
                 MakeButtonDRed();
             }
+            labelScore.Text = liveScore.ToString();
             disableJoker();
             disableButtons();
             visibleNextButton();
@@ -401,6 +404,7 @@ namespace MovieFinderGame
         private void buttonNext_Click(object sender, EventArgs e)
         {
             makeButtonsReady();
+            MessageBox.Show(isJokerUsed.ToString());
             if (!isJokerUsed)
             {
                 enableJoker();
