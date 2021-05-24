@@ -54,7 +54,6 @@ namespace MovieFinderGame
             {
                 ListViewItem lvi = new ListViewItem();
                 lvi.Selected = false;
-                lvi.UseItemStyleForSubItems = false;
                 lvi.Text = userList[i].username;
                 lvi.SubItems.Add(userList[i].score.ToString());
                 listViewRanking.Items.Add(lvi);

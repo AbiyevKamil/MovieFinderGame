@@ -404,7 +404,6 @@ namespace MovieFinderGame
         private void buttonNext_Click(object sender, EventArgs e)
         {
             makeButtonsReady();
-            MessageBox.Show(isJokerUsed.ToString());
             if (!isJokerUsed)
             {
                 enableJoker();

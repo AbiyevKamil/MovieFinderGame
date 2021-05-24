@@ -34,8 +34,8 @@ namespace MovieFinderGame
 
         private void buttonSignup_Click(object sender, EventArgs e)
         {
-            string regexSturct = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
-            Regex regexMail = new Regex(regexSturct);
+            string regexStruct = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            Regex regexMail = new Regex(regexStruct);
             string username = textBoxUsername.Text.Trim();
             string mail = textBoxMail.Text.Trim();
             string password = textBoxPassword.Text.Trim();

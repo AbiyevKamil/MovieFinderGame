@@ -18,11 +18,6 @@ namespace MovieFinderGame
             InitializeComponent();
         }
 
-        public string ReadWrite
-        {
-            get { return textBoxUsername.Text; }
-        }
-
         private void Login_Load(object sender, EventArgs e)
         {
             textBoxPassword.PasswordChar = '•';
@@ -72,6 +67,7 @@ namespace MovieFinderGame
             if (checkBoxShowPassword.Checked)
             {
                 // \0 refers to a null character
+                // '\u0000' means null character in Unicode and it does the same thing as '\0'
                 textBoxPassword.PasswordChar = '\0';
             }
             else
